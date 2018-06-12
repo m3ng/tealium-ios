@@ -7,21 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0357B420BDF6AD0064A6EE /* SliderPreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0357B320BDF6AD0064A6EE /* SliderPreferencesTableViewController.swift */; };
+		4B0357B620D01B170064A6EE /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0357B520D01B170064A6EE /* SwitchTableViewCell.swift */; };
+		4B0357B820D030160064A6EE /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0357B720D030160064A6EE /* TitleTableViewCell.swift */; };
+		4B0357BE20D0769C0064A6EE /* TealiumIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0357BD20D0769C0064A6EE /* TealiumIOS.framework */; };
+		4B0357BF20D0769C0064A6EE /* TealiumIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0357BD20D0769C0064A6EE /* TealiumIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4B2A116E20B8625000BCE2C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A116D20B8625000BCE2C6 /* AppDelegate.swift */; };
-		4B2A117020B8625000BCE2C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A116F20B8625000BCE2C6 /* ViewController.swift */; };
 		4B2A117320B8625000BCE2C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B2A117120B8625000BCE2C6 /* Main.storyboard */; };
 		4B2A117520B8625200BCE2C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B2A117420B8625200BCE2C6 /* Assets.xcassets */; };
 		4B2A117820B8625200BCE2C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B2A117620B8625200BCE2C6 /* LaunchScreen.storyboard */; };
+		4B2A118220B8637C00BCE2C6 /* PreferencesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A118120B8637C00BCE2C6 /* PreferencesListViewController.swift */; };
+		4B2A118E20B87E2100BCE2C6 /* TealiumHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A118D20B87E2100BCE2C6 /* TealiumHelper.swift */; };
+		4B2A119020B8C8E800BCE2C6 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A118F20B8C8E800BCE2C6 /* HomeTableViewController.swift */; };
+		4B2A119220B8D23F00BCE2C6 /* SimplePreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A119120B8D23F00BCE2C6 /* SimplePreferencesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4B0357BC20D063320064A6EE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4B0357BF20D0769C0064A6EE /* TealiumIOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4B0357B320BDF6AD0064A6EE /* SliderPreferencesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPreferencesTableViewController.swift; sourceTree = "<group>"; };
+		4B0357B520D01B170064A6EE /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		4B0357B720D030160064A6EE /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		4B0357BD20D0769C0064A6EE /* TealiumIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TealiumIOS.framework; sourceTree = "<group>"; };
 		4B2A116A20B8625000BCE2C6 /* ConsentManagerDemo_ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConsentManagerDemo_ObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2A116D20B8625000BCE2C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B2A116F20B8625000BCE2C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B2A117220B8625000BCE2C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B2A117420B8625200BCE2C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B2A117720B8625200BCE2C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B2A117920B8625200BCE2C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B2A118120B8637C00BCE2C6 /* PreferencesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesListViewController.swift; sourceTree = "<group>"; };
+		4B2A118920B87B9000BCE2C6 /* ConsentManagerDemo_ObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ConsentManagerDemo_ObjC-Bridging-Header.h"; sourceTree = "<group>"; };
+		4B2A118D20B87E2100BCE2C6 /* TealiumHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TealiumHelper.swift; sourceTree = "<group>"; };
+		4B2A118F20B8C8E800BCE2C6 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		4B2A119120B8D23F00BCE2C6 /* SimplePreferencesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePreferencesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B0357BE20D0769C0064A6EE /* TealiumIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +69,7 @@
 		4B2A116120B8625000BCE2C6 = {
 			isa = PBXGroup;
 			children = (
+				4B0357BD20D0769C0064A6EE /* TealiumIOS.framework */,
 				4B2A116C20B8625000BCE2C6 /* ConsentManagerDemo_ObjC */,
 				4B2A116B20B8625000BCE2C6 /* Products */,
 			);
@@ -55,11 +87,18 @@
 			isa = PBXGroup;
 			children = (
 				4B2A116D20B8625000BCE2C6 /* AppDelegate.swift */,
-				4B2A116F20B8625000BCE2C6 /* ViewController.swift */,
+				4B2A118D20B87E2100BCE2C6 /* TealiumHelper.swift */,
+				4B2A118F20B8C8E800BCE2C6 /* HomeTableViewController.swift */,
+				4B2A118120B8637C00BCE2C6 /* PreferencesListViewController.swift */,
+				4B0357B320BDF6AD0064A6EE /* SliderPreferencesTableViewController.swift */,
+				4B2A119120B8D23F00BCE2C6 /* SimplePreferencesTableViewController.swift */,
+				4B0357B520D01B170064A6EE /* SwitchTableViewCell.swift */,
+				4B0357B720D030160064A6EE /* TitleTableViewCell.swift */,
 				4B2A117120B8625000BCE2C6 /* Main.storyboard */,
 				4B2A117420B8625200BCE2C6 /* Assets.xcassets */,
 				4B2A117620B8625200BCE2C6 /* LaunchScreen.storyboard */,
 				4B2A117920B8625200BCE2C6 /* Info.plist */,
+				4B2A118920B87B9000BCE2C6 /* ConsentManagerDemo_ObjC-Bridging-Header.h */,
 			);
 			path = ConsentManagerDemo_ObjC;
 			sourceTree = "<group>";
@@ -74,6 +113,7 @@
 				4B2A116620B8625000BCE2C6 /* Sources */,
 				4B2A116720B8625000BCE2C6 /* Frameworks */,
 				4B2A116820B8625000BCE2C6 /* Resources */,
+				4B0357BC20D063320064A6EE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,8 +175,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B2A117020B8625000BCE2C6 /* ViewController.swift in Sources */,
+				4B0357B820D030160064A6EE /* TitleTableViewCell.swift in Sources */,
+				4B2A119020B8C8E800BCE2C6 /* HomeTableViewController.swift in Sources */,
 				4B2A116E20B8625000BCE2C6 /* AppDelegate.swift in Sources */,
+				4B0357B620D01B170064A6EE /* SwitchTableViewCell.swift in Sources */,
+				4B2A118220B8637C00BCE2C6 /* PreferencesListViewController.swift in Sources */,
+				4B0357B420BDF6AD0064A6EE /* SliderPreferencesTableViewController.swift in Sources */,
+				4B2A119220B8D23F00BCE2C6 /* SimplePreferencesTableViewController.swift in Sources */,
+				4B2A118E20B87E2100BCE2C6 /* TealiumHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,13 +328,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XC939GDC9P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ConsentManagerDemo_ObjC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tealium.ConsentManagerDemo-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,13 +352,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XC939GDC9P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ConsentManagerDemo_ObjC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tealium.ConsentManagerDemo-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
