@@ -13,23 +13,24 @@ class HomeTableViewController: UITableViewController {
     let consentManager = TealiumHelper.shared.tealium.consentManager
     var consentStatusText = ""
     var consentedCategoriesText = ""
-    let consentedCategoriesFont = UIFont.systemFont(ofSize: 17.0)
-    let padding = 16.0
+    let consentFont = UIFont.italicSystemFont(ofSize: 15.0)
+    let padding: CGFloat = 8.0
+    let paddingCount: CGFloat = 3.0
+    let consentPreferencesCount = 3
+    
+    enum Section: Int {
+        case track
+        case consentPreferences
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,54 +50,69 @@ class HomeTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        if section == Section.track.rawValue {
             return 1
-        } else if section == 1 {
-            return 3
+        } else if section == Section.consentPreferences.rawValue {
+            return consentPreferencesCount
         }
         return 0
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
+        if indexPath.section == Section.track.rawValue {
             TealiumHelper.shared.trackView(title: "HomeTableViewController", dataSources: nil)
-            tableView.deselectRow(at: indexPath, animated: true)
-        } else if indexPath.section == 1 {
-//            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreferencesListViewController")
-//            navigationController?.pushViewController(controller, animated: true)
-            if indexPath.row == 2 {
-
-            }
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == 0 {
             let footerView = UIView(frame: tableView.frame)
-            footerView.backgroundColor = UIColor.orange
+            
+            let consentLabel = UILabel(frame: footerView.frame)
+            consentLabel.numberOfLines = 0
+            consentLabel.lineBreakMode = .byWordWrapping
+            consentLabel.font = consentFont
+            consentLabel.text = consentStatusText
+            consentLabel.textColor = UIColor.darkGray
+            consentLabel.translatesAutoresizingMaskIntoConstraints = false
             
             let categoriesLabel = UILabel(frame: footerView.frame)
             categoriesLabel.numberOfLines = 0
             categoriesLabel.lineBreakMode = .byWordWrapping
-            categoriesLabel.font = consentedCategoriesFont
+            categoriesLabel.font = consentFont
             categoriesLabel.text = consentedCategoriesText
+            categoriesLabel.textColor = UIColor.darkGray
+            categoriesLabel.translatesAutoresizingMaskIntoConstraints = false
             
-            let height = labelHeight(text: consentedCategoriesText, font: consentedCategoriesFont)
-            footerView.frame.size.height = height
-            categoriesLabel.frame.size.height = height
+            var height = labelHeight(text: consentStatusText, font: consentFont)
+            height += labelHeight(text: consentedCategoriesText, font: consentFont)
+            footerView.frame.size.height = height + paddingCount * padding
             
-//            categoriesLabel.translatesAutoresizingMaskIntoConstraints = false
+            footerView.addSubview(consentLabel)
             footerView.addSubview(categoriesLabel)
 
-//            let constraint1 = NSLayoutConstraint(item: categoriesLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
-//            let constraint2 = NSLayoutConstraint(item: categoriesLabel, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
-//
-//            categoriesLabel.addConstraints([constraint1, constraint2])
+            var allConstraints: [NSLayoutConstraint] = []
+            
+            let metrics = [
+                "padding": padding
+            ]
+            let views: [String: Any] = [
+                "footerView": footerView,
+                "consentLabel": consentLabel,
+                "categoriesLabel": categoriesLabel
+            ]
+
+            allConstraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|-[consentLabel]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
+            allConstraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-[consentLabel]", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
+            allConstraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|-[categoriesLabel]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
+            allConstraints += NSLayoutConstraint.constraints(withVisualFormat: "V:[consentLabel]-[categoriesLabel]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
+            
+            NSLayoutConstraint.activate(allConstraints)
             
             return footerView
         }
@@ -104,8 +120,10 @@ class HomeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return labelHeight(text: consentedCategoriesText, font: consentedCategoriesFont)
+        if section == Section.track.rawValue {
+            return labelHeight(text: consentStatusText, font: consentFont) +
+                labelHeight(text: consentedCategoriesText, font: consentFont) +
+                paddingCount * padding
         } else {
             return 0
         }

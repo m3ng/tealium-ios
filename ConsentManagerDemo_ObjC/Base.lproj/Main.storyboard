@@ -135,7 +135,7 @@
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5O-sy-VaY">
                                             <rect key="frame" x="310" y="11" width="51" height="31"/>
                                         </switch>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FWf-5b-XG0">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FWf-5b-XG0">
                                             <rect key="frame" x="16" y="45" width="343" height="24"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                             <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -173,7 +173,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ROA-Cv-yed">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ROA-Cv-yed">
                                             <rect key="frame" x="16" y="11" width="343" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -202,10 +202,10 @@
             </objects>
             <point key="canvasLocation" x="2208.8000000000002" y="509.59520239880067"/>
         </scene>
-        <!--SliderPreferencesTableViewController-->
+        <!--Slider Preferences-->
         <scene sceneID="c1q-9h-q7v">
             <objects>
-                <tableViewController title="SliderPreferencesTableViewController" id="S3Y-Ec-mnP" customClass="SliderPreferencesTableViewController" customModule="ConsentManagerDemo_ObjC" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Slider Preferences" id="S3Y-Ec-mnP" customClass="SliderPreferencesTableViewController" customModule="ConsentManagerDemo_ObjC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="uVn-sl-vq3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -335,10 +335,10 @@
             </objects>
             <point key="canvasLocation" x="2210" y="1197"/>
         </scene>
-        <!--Simple Preferences Table View Controller-->
+        <!--Simple Preferences-->
         <scene sceneID="uTa-9T-aLY">
             <objects>
-                <tableViewController storyboardIdentifier="SimplePreferencesTableViewController" id="DbS-fO-RLg" customClass="SimplePreferencesTableViewController" customModule="ConsentManagerDemo_ObjC" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SimplePreferencesTableViewController" title="Simple Preferences" id="DbS-fO-RLg" customClass="SimplePreferencesTableViewController" customModule="ConsentManagerDemo_ObjC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="wg7-rY-Kmc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

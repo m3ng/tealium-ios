@@ -8,20 +8,6 @@
 
 import UIKit
 
-class Preference {
-    let name: String
-    var enabled: Bool
-    let helpText: String
-    let categoryName: String
-    
-    init(name: String, enabled: Bool, helpText: String, categoryName: String) {
-        self.name = name
-        self.enabled = enabled
-        self.helpText = helpText
-        self.categoryName = categoryName
-    }
-}
-
 class PreferencesListViewController: UITableViewController {
 
     let consentManager = TealiumHelper.shared.tealium.consentManager
@@ -29,10 +15,11 @@ class PreferencesListViewController: UITableViewController {
     var preferences = [Preference]()
     var filteredCategoryNames = [String]()
     var categoryIndexPaths = [IndexPath]()
+    let consentStatusString = "Consent Status"
     
-    enum Section: Int {
-        case consent
-        case settings
+    enum ConsentRow: Int {
+        case status
+        case categories
     }
     
     override func viewDidLoad() {
@@ -44,17 +31,16 @@ class PreferencesListViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func setupTitles() {
         let consentStatusString = TEALConsentManager.consentStatusString(consentManager.consentStatus)
         titles.append("Consent Status: \(consentStatusString)")
-        categoryNames()
+        filterCategoryNames()
         titles.append("Current categories: \(filteredCategoryNames.joined(separator: ", "))")
     }
     
-    func categoryNames() {
+    func filterCategoryNames() {
         filteredCategoryNames = preferences.filter { preference in
             preference.enabled == true && !preference.categoryName.isEmpty
             }.map { p in
@@ -66,7 +52,7 @@ class PreferencesListViewController: UITableViewController {
     func setupPreferences() {
         let consentedCategoryNames = consentManager.consentedCategoryNames() as? [String]
         
-        preferences.append(Preference(name: "Consent Status", enabled: consentManager.isConsented(), helpText: "We would like to collect data about your app experience to help us improve our products. Please choose your preferences.", categoryName: ""))
+        preferences.append(Preference(name: consentStatusString, enabled: consentManager.isConsented(), helpText: "We would like to collect data about your app experience to help us improve our products. Please choose your preferences.", categoryName: ""))
         
         preferences.append(Preference(name: "Analytics", enabled: consentedCategoryNames?.contains("analytics") ?? false, helpText: "Help us improve your experience.", categoryName: "analytics"))
         preferences.append(Preference(name: "Affiliates", enabled: consentedCategoryNames?.contains("affiliates") ?? false, helpText: "Earn credit for shopping with us.", categoryName: "affiliates"))
@@ -85,7 +71,7 @@ class PreferencesListViewController: UITableViewController {
         preferences.append(Preference(name: "Misc", enabled: consentedCategoryNames?.contains("misc") ?? false, helpText: "Misc items that help us build a better app experience.", categoryName: "misc"))
         
         for row in 1...preferences.count - 1 {
-            categoryIndexPaths.append(IndexPath(row: row, section: Section.settings.rawValue))
+            categoryIndexPaths.append(IndexPath(row: row, section: ConsentSection.settings.rawValue))
         }
     }
 
@@ -104,9 +90,9 @@ class PreferencesListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == Section.consent.rawValue {
+        if section == ConsentSection.status.rawValue {
             return 2
-        } else if section == Section.settings.rawValue {
+        } else if section == ConsentSection.settings.rawValue {
             return preferences.count
         } else {
             return 0
@@ -114,7 +100,7 @@ class PreferencesListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == Section.consent.rawValue {
+        if indexPath.section == ConsentSection.status.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TitleTableViewCell") as! TitleTableViewCell
             let title = titles[indexPath.row]
             cell.title = title
@@ -132,11 +118,6 @@ class PreferencesListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.section == 1 {
-//        let cell = tableView.cellForRow(at: indexPath) as! SwitchTableViewCell
-//            cell.enabled
-        }
-        print(indexPath)
     }
 
     @objc func onSwitchChanged(_ sender: UISwitch) {
@@ -147,13 +128,14 @@ class PreferencesListViewController: UITableViewController {
         let preference = preferences[indexPath.row]
         preference.enabled = sender.isOn
         
-        if preference.name == "Consent Status" {
+        if preference.name == consentStatusString {
             if preference.enabled {
                 consentManager.updateConsentStatus(TEALConsentStatus.Consented)
             } else {
                 consentManager.updateConsentStatus(TEALConsentStatus.NotConsented)
             }
             
+            // logic to enable/disable all switches when master consent status switch is enabled/disabled
             preferences.forEach { p in
                 p.enabled = sender.isOn
             }
@@ -163,12 +145,12 @@ class PreferencesListViewController: UITableViewController {
             tableView.reloadRows(at: categoryIndexPaths, with: .automatic)
         } else {
             if preference.enabled {
-                // Update to Consented if needed
+                // Update master consent status switch when any other row is selected if not enabled
                 if !consentManager.isConsented() {
                     consentManager.updateConsentStatus(TEALConsentStatus.Consented)
                     updateConsentStatusLabel()
-                    preferences[0].enabled = true
-                    tableView.reloadRows(at: [IndexPath(row: 0, section: Section.settings.rawValue)], with: .automatic)
+                    preferences.first?.enabled = true
+                    tableView.reloadRows(at: [IndexPath(row: 0, section: ConsentSection.settings.rawValue)], with: .automatic)
                 }
             }
             updateConsentCategoriesLabel()
@@ -177,13 +159,13 @@ class PreferencesListViewController: UITableViewController {
     
     func updateConsentStatusLabel() {
         let consentStatusString = TEALConsentManager.consentStatusString(consentManager.consentStatus)
-        titles[0] = "Consent Status: \(consentStatusString)"
-        tableView.reloadRows(at: [IndexPath(row: 0, section: Section.consent.rawValue)], with: .automatic)
+        titles[ConsentRow.status.rawValue] = "Consent Status: \(consentStatusString)"
+        tableView.reloadRows(at: [IndexPath(row: ConsentRow.status.rawValue, section: ConsentSection.status.rawValue)], with: .automatic)
     }
     
     func updateConsentCategoriesLabel() {
-        categoryNames()
-        titles[1] = "Current categories: \(filteredCategoryNames.joined(separator: ", "))"
-        tableView.reloadRows(at: [IndexPath(row: 1, section: Section.consent.rawValue)], with: .automatic)
+        filterCategoryNames()
+        titles[ConsentRow.categories.rawValue] = "Current categories: \(filteredCategoryNames.joined(separator: ", "))"
+        tableView.reloadRows(at: [IndexPath(row: ConsentRow.categories.rawValue, section: ConsentSection.status.rawValue)], with: .automatic)
     }
 }

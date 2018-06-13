@@ -12,6 +12,8 @@
 		4B0357B820D030160064A6EE /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0357B720D030160064A6EE /* TitleTableViewCell.swift */; };
 		4B0357BE20D0769C0064A6EE /* TealiumIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0357BD20D0769C0064A6EE /* TealiumIOS.framework */; };
 		4B0357BF20D0769C0064A6EE /* TealiumIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0357BD20D0769C0064A6EE /* TealiumIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4B0357C120D18C760064A6EE /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0357C020D18C760064A6EE /* Preference.swift */; };
+		4B0357C420D18CFA0064A6EE /* ConsentGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0357C320D18CFA0064A6EE /* ConsentGroup.swift */; };
 		4B2A116E20B8625000BCE2C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A116D20B8625000BCE2C6 /* AppDelegate.swift */; };
 		4B2A117320B8625000BCE2C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B2A117120B8625000BCE2C6 /* Main.storyboard */; };
 		4B2A117520B8625200BCE2C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B2A117420B8625200BCE2C6 /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 		4B0357B520D01B170064A6EE /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		4B0357B720D030160064A6EE /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		4B0357BD20D0769C0064A6EE /* TealiumIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TealiumIOS.framework; sourceTree = "<group>"; };
+		4B0357C020D18C760064A6EE /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		4B0357C320D18CFA0064A6EE /* ConsentGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentGroup.swift; sourceTree = "<group>"; };
 		4B2A116A20B8625000BCE2C6 /* ConsentManagerDemo_ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConsentManagerDemo_ObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2A116D20B8625000BCE2C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B2A117220B8625000BCE2C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B0357C220D18CEA0064A6EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4B0357C320D18CFA0064A6EE /* ConsentGroup.swift */,
+				4B0357C020D18C760064A6EE /* Preference.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		4B2A116120B8625000BCE2C6 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +99,7 @@
 		4B2A116C20B8625000BCE2C6 /* ConsentManagerDemo_ObjC */ = {
 			isa = PBXGroup;
 			children = (
+				4B0357C220D18CEA0064A6EE /* Models */,
 				4B2A116D20B8625000BCE2C6 /* AppDelegate.swift */,
 				4B2A118D20B87E2100BCE2C6 /* TealiumHelper.swift */,
 				4B2A118F20B8C8E800BCE2C6 /* HomeTableViewController.swift */,
@@ -179,9 +193,11 @@
 				4B2A119020B8C8E800BCE2C6 /* HomeTableViewController.swift in Sources */,
 				4B2A116E20B8625000BCE2C6 /* AppDelegate.swift in Sources */,
 				4B0357B620D01B170064A6EE /* SwitchTableViewCell.swift in Sources */,
+				4B0357C420D18CFA0064A6EE /* ConsentGroup.swift in Sources */,
 				4B2A118220B8637C00BCE2C6 /* PreferencesListViewController.swift in Sources */,
 				4B0357B420BDF6AD0064A6EE /* SliderPreferencesTableViewController.swift in Sources */,
 				4B2A119220B8D23F00BCE2C6 /* SimplePreferencesTableViewController.swift in Sources */,
+				4B0357C120D18C760064A6EE /* Preference.swift in Sources */,
 				4B2A118E20B87E2100BCE2C6 /* TealiumHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

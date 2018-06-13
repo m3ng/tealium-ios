@@ -19,12 +19,6 @@ class SimplePreferencesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Simple Preferences"
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         updateConsentStatusLabel()
         updateConsentStatus()
         updateConsentedCategoriesLabel()
@@ -42,9 +36,9 @@ class SimplePreferencesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        if section == ConsentSection.status.rawValue {
             return 2
-        } else if section == 1 {
+        } else if section == ConsentSection.settings.rawValue {
             return 1
         } else {
             return 0
