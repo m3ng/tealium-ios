@@ -18,9 +18,15 @@ class TealiumHelper: NSObject {
     override private init() {
         super.init()
         configuration.logLevel = TEALLogLevel.dev
+        // optionally set consent manager properties on initialization of Tealium instance
+        configuration.enableConsentManager = true
+        configuration.userConsentStatus = .Consented
+        configuration.userConsentCategories = ["analytics", "big_data"]
+        
         self.tealium = Tealium.newInstance(forKey: "1", configuration: configuration)
         self.tealium.setConsentManagerDelegate(self)
-        print("\(TEALConsentManager.consentStatusString(self.tealium.consentManager.consentStatus))")
+        self.tealium.consentManager.setConsentLoggingEnabled(true)
+        print("\(TEALConsentManager.consentStatusString(self.tealium.consentManager.userConsentStatus))")
     }
     
     static func start() {
@@ -33,18 +39,29 @@ class TealiumHelper: NSObject {
 }
 
 extension TealiumHelper: TEALConsentManagerDelegate {
-    func consentManagerWillChange(withState consentStatus: TEALConsentStatus) {
-        print(#function)
-        print("\(TEALConsentManager.consentStatusString(consentStatus))")
-    }
-    
     func consentManagerDidChange(withState consentStatus: TEALConsentStatus) {
         print(#function)
-        print("\(consentStatus)")
+        print("🕵🏻‍♂️\(consentStatus)")
     }
     
-    func consentManagerDidUpdateConsentedCategoryNames(_ categoryNames: [Any]?) {
+    func consentManagerDidUpdateConsentCategories(_ categories: [Any]?) {
         print(#function)
-        print("\(String(describing: categoryNames))")
+        print("🕵🏻‍♂️\(String(describing: categories))")
+    }
+    
+    func consentManagerWillDrop(_ dispatch: TEALDispatch?) {
+        print(#function)
+        guard let dispatch = dispatch else {
+            return
+        }
+        print("🕵🏻‍♂️\(dispatch)")
+    }
+    
+    func consentManagerWillQueue(_ dispatch: TEALDispatch?) {
+        print(#function)
+        guard let dispatch = dispatch else {
+            return
+        }
+        print("🕵🏻‍♂️\(dispatch)")
     }
 }

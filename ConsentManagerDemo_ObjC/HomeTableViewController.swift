@@ -18,9 +18,13 @@ class HomeTableViewController: UITableViewController {
     let paddingCount: CGFloat = 3.0
     let consentPreferencesCount = 3
     
+    @IBOutlet weak var consentLoggingSwitch: UISwitch!
+    
     enum Section: Int {
         case track
         case consentPreferences
+        case reset
+        case logging
     }
     
     override func viewDidLoad() {
@@ -35,22 +39,38 @@ class HomeTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let consentStatusString = TEALConsentManager.consentStatusString(consentManager.consentStatus)
+        updateConsentStatusView()
+        updateConsentLoggingSwitch()
+        
+        tableView.reloadData()
+    }
+    
+    func updateConsentStatusView() {
+        let consentStatusString = TEALConsentManager.consentStatusString(consentManager.userConsentStatus)
         consentStatusText = "Consent Status: \(consentStatusString)"
         
-        if let categories = consentManager.consentedCategoryNames() as? [String] {
+        if let categories = consentManager.userConsentCategories() as? [String] {
             consentedCategoriesText = "Consented Categories: \(categories.joined(separator: ", "))"
         } else {
             consentedCategoriesText = "Consented Categories:"
         }
-        
-        tableView.reloadData()
+    }
+    
+    func updateConsentLoggingSwitch() {
+        consentLoggingSwitch.isOn = consentManager.isConsentLoggingEnabled()
     }
 
+    @IBAction func onConsentLoggingChanged(_ sender: UISwitch) {
+        if sender.isOn {
+            consentManager.setConsentLoggingEnabled(true)
+        } else {
+            consentManager.setConsentLoggingEnabled(false)
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,6 +78,10 @@ class HomeTableViewController: UITableViewController {
             return 1
         } else if section == Section.consentPreferences.rawValue {
             return consentPreferencesCount
+        } else if section == Section.reset.rawValue {
+            return 1
+        } else if section == Section.logging.rawValue {
+            return 1
         }
         return 0
     }
@@ -65,12 +89,17 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == Section.track.rawValue {
             TealiumHelper.shared.trackView(title: "HomeTableViewController", dataSources: nil)
+        } else if indexPath.section == Section.reset.rawValue {
+            consentManager.resetUserConsentPreferences()
+            
+            updateConsentStatusView()  
+            tableView.reloadData()
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if section == 0 {
+        if section == Section.track.rawValue {
             let footerView = UIView(frame: tableView.frame)
             
             let consentLabel = UILabel(frame: footerView.frame)

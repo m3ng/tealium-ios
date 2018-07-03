@@ -46,12 +46,12 @@ class SimplePreferencesTableViewController: UITableViewController {
     }
     
     func updateConsentStatusLabel() {
-        let consentStatusString = TEALConsentManager.consentStatusString(consentManager.consentStatus)
+        let consentStatusString = TEALConsentManager.consentStatusString(consentManager.userConsentStatus)
         consentStatusLabel.text = "Consent Status: \(consentStatusString)"
     }
 
     func updateConsentStatus() {
-        if consentManager.consentStatus == TEALConsentStatus.Consented {
+        if consentManager.userConsentStatus == TEALConsentStatus.Consented {
             consentStatusSwitch.isOn = true
         } else {
             consentStatusSwitch.isOn = false
@@ -59,8 +59,8 @@ class SimplePreferencesTableViewController: UITableViewController {
     }
     
     func updateConsentedCategoriesLabel() {
-        if consentManager.consentStatus == TEALConsentStatus.Consented {
-            guard let consentedCategoryNames = consentManager.consentedCategoryNames() as? [String] else {
+        if consentManager.userConsentStatus == TEALConsentStatus.Consented {
+            guard let consentedCategoryNames = consentManager.userConsentCategories() as? [String] else {
                 return
             }
             
@@ -76,11 +76,11 @@ class SimplePreferencesTableViewController: UITableViewController {
         let enabled = sender.isOn
         
         if enabled {
-            consentManager.updateConsentStatus(TEALConsentStatus.Consented)
-            consentManager.updateConsentedCategoryNames(consentManager.acceptableCategoryNames())
+            consentManager.setUserConsentStatus(TEALConsentStatus.Consented)
+            consentManager.setUserConsentCategories(consentManager.allCategories())
         } else {
-            consentManager.updateConsentStatus(TEALConsentStatus.NotConsented)
-            consentManager.removeConsentedCategories()
+            consentManager.setUserConsentStatus(TEALConsentStatus.NotConsented)
+            consentManager.resetUserConsentCategories()
         }
         
         updateConsentStatusLabel()

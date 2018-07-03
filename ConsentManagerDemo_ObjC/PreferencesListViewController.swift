@@ -34,7 +34,7 @@ class PreferencesListViewController: UITableViewController {
     }
     
     func setupTitles() {
-        let consentStatusString = TEALConsentManager.consentStatusString(consentManager.consentStatus)
+        let consentStatusString = TEALConsentManager.consentStatusString(consentManager.userConsentStatus)
         titles.append("Consent Status: \(consentStatusString)")
         filterCategoryNames()
         titles.append("Current categories: \(filteredCategoryNames.joined(separator: ", "))")
@@ -46,11 +46,11 @@ class PreferencesListViewController: UITableViewController {
             }.map { p in
                 return p.categoryName
         }
-        consentManager.updateConsentedCategoryNames(filteredCategoryNames)
+        consentManager.setUserConsentCategories(filteredCategoryNames)
     }
     
     func setupPreferences() {
-        let consentedCategoryNames = consentManager.consentedCategoryNames() as? [String]
+        let consentedCategoryNames = consentManager.userConsentCategories() as? [String]
         
         preferences.append(Preference(name: consentStatusString, enabled: consentManager.isConsented(), helpText: "We would like to collect data about your app experience to help us improve our products. Please choose your preferences.", categoryName: ""))
         
@@ -130,9 +130,9 @@ class PreferencesListViewController: UITableViewController {
         
         if preference.name == consentStatusString {
             if preference.enabled {
-                consentManager.updateConsentStatus(TEALConsentStatus.Consented)
+                consentManager.setUserConsentStatus(TEALConsentStatus.Consented)
             } else {
-                consentManager.updateConsentStatus(TEALConsentStatus.NotConsented)
+                consentManager.setUserConsentStatus(TEALConsentStatus.NotConsented)
             }
             
             // logic to enable/disable all switches when master consent status switch is enabled/disabled
@@ -147,7 +147,7 @@ class PreferencesListViewController: UITableViewController {
             if preference.enabled {
                 // Update master consent status switch when any other row is selected if not enabled
                 if !consentManager.isConsented() {
-                    consentManager.updateConsentStatus(TEALConsentStatus.Consented)
+                    consentManager.setUserConsentStatus(TEALConsentStatus.Consented)
                     updateConsentStatusLabel()
                     preferences.first?.enabled = true
                     tableView.reloadRows(at: [IndexPath(row: 0, section: ConsentSection.settings.rawValue)], with: .automatic)
@@ -158,7 +158,7 @@ class PreferencesListViewController: UITableViewController {
     }
     
     func updateConsentStatusLabel() {
-        let consentStatusString = TEALConsentManager.consentStatusString(consentManager.consentStatus)
+        let consentStatusString = TEALConsentManager.consentStatusString(consentManager.userConsentStatus)
         titles[ConsentRow.status.rawValue] = "Consent Status: \(consentStatusString)"
         tableView.reloadRows(at: [IndexPath(row: ConsentRow.status.rawValue, section: ConsentSection.status.rawValue)], with: .automatic)
     }
