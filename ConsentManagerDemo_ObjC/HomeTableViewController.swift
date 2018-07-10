@@ -88,8 +88,7 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == Section.track.rawValue {
-            // uncomment to make a track call
-//            TealiumHelper.shared.trackView(title: "HomeTableViewController", dataSources: nil)
+            TealiumHelper.shared.trackView(title: "HomeTableViewController", dataSources: nil)
         } else if indexPath.section == Section.reset.rawValue {
             consentManager.resetUserConsentPreferences()
             

@@ -20,8 +20,8 @@
 		4B2A118E20B87E2100BCE2C6 /* TealiumHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A118D20B87E2100BCE2C6 /* TealiumHelper.swift */; };
 		4B2A119020B8C8E800BCE2C6 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A118F20B8C8E800BCE2C6 /* HomeTableViewController.swift */; };
 		4B2A119220B8D23F00BCE2C6 /* SimplePreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A119120B8D23F00BCE2C6 /* SimplePreferencesTableViewController.swift */; };
-		4BAE650720EED395005B80E9 /* TealiumIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAE650620EED394005B80E9 /* TealiumIOS.framework */; };
-		4BAE650820EED395005B80E9 /* TealiumIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAE650620EED394005B80E9 /* TealiumIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4BEF0BF320F504E9002EE24D /* TealiumIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEF0BF220F504E9002EE24D /* TealiumIOS.framework */; };
+		4BEF0BF420F504E9002EE24D /* TealiumIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEF0BF220F504E9002EE24D /* TealiumIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,7 +31,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4BAE650820EED395005B80E9 /* TealiumIOS.framework in Embed Frameworks */,
+				4BEF0BF420F504E9002EE24D /* TealiumIOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,7 +56,7 @@
 		4B2A118F20B8C8E800BCE2C6 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		4B2A119120B8D23F00BCE2C6 /* SimplePreferencesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePreferencesTableViewController.swift; sourceTree = "<group>"; };
 		4BAE554E20EA9FC7007551B9 /* TealiumIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TealiumIOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/FrameworkBuilder-dmbnvbrnwapxjacsxxaxikshtzto/Build/Products/Release-iphonesimulator/TealiumIOS.framework"; sourceTree = "<group>"; };
-		4BAE650620EED394005B80E9 /* TealiumIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TealiumIOS.framework; sourceTree = "<group>"; };
+		4BEF0BF220F504E9002EE24D /* TealiumIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TealiumIOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BAE650720EED395005B80E9 /* TealiumIOS.framework in Frameworks */,
+				4BEF0BF320F504E9002EE24D /* TealiumIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 		4B2A116120B8625000BCE2C6 = {
 			isa = PBXGroup;
 			children = (
-				4BAE650620EED394005B80E9 /* TealiumIOS.framework */,
+				4BEF0BF220F504E9002EE24D /* TealiumIOS.framework */,
 				4B2A116C20B8625000BCE2C6 /* ConsentManagerDemo_ObjC */,
 				4B2A116B20B8625000BCE2C6 /* Products */,
 				4BAE554D20EA9FC7007551B9 /* Frameworks */,

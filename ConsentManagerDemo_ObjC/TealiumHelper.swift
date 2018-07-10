@@ -18,9 +18,9 @@ class TealiumHelper: NSObject {
     override private init() {
         super.init()
         configuration.logLevel = TEALLogLevel.dev
-        // optionally set consent manager properties on initialization of Tealium instance
         configuration.enableConsentManager = true
-//        configuration.userConsentStatus = .Unknown
+
+        // optionally set consent manager properties on initialization of Tealium instance
 //        configuration.userConsentCategories = ["analytics", "big_data"]
         
         self.tealium = Tealium.newInstance(forKey: "1", configuration: configuration)

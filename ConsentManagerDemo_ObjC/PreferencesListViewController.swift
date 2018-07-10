@@ -24,7 +24,7 @@ class PreferencesListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupPreferences()
         setupTitles()
     }
