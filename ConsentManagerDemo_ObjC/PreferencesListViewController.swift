@@ -46,7 +46,9 @@ class PreferencesListViewController: UITableViewController {
             }.map { p in
                 return p.categoryName
         }
-        consentManager.setUserConsentCategories(filteredCategoryNames)
+        if filteredCategoryNames.count > 0 {
+            consentManager.setUserConsentStatus(TEALConsentStatus.Consented, withUserConsentCategories: filteredCategoryNames)
+        }
     }
     
     func setupPreferences() {
@@ -147,13 +149,12 @@ class PreferencesListViewController: UITableViewController {
             if preference.enabled {
                 // Update master consent status switch when any other row is selected if not enabled
                 if !consentManager.isConsented() {
-                    consentManager.setUserConsentStatus(TEALConsentStatus.Consented)
-                    updateConsentStatusLabel()
                     preferences.first?.enabled = true
                     tableView.reloadRows(at: [IndexPath(row: 0, section: ConsentSection.settings.rawValue)], with: .automatic)
                 }
             }
             updateConsentCategoriesLabel()
+            updateConsentStatusLabel()
         }
     }
     
