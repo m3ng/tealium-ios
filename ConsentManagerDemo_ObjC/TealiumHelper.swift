@@ -12,7 +12,7 @@ class TealiumHelper: NSObject {
     
     static let shared = TealiumHelper()
     
-    let configuration = TEALConfiguration(account: "services-jonwong", profile: "mobile", environment: "dev")
+    let configuration = TEALConfiguration(account: "tealiummobile", profile: "demo", environment: "dev")
     var tealium: Tealium!
     
     override private init() {
