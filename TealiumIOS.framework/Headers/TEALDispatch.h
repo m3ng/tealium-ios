@@ -126,6 +126,13 @@ typedef void (^TEALDispatchBlock)(TEALDispatchStatus status, TEALDispatch * _Non
 + (TEALDispatch * _Nonnull)fromDictionary:(NSDictionary* _Nullable)dictionary;
 
 /**
+ Adds dataSources to the payload.
+ 
+ @param dataSources NSDictionary to add to the dispatch.
+ */
+- (void)addDataSources:(NSDictionary *)dataSources;
+
+/**
  Creates a TEALDispatch given a payload.
  
  @param payload NSDictionary: payload
