@@ -100,15 +100,18 @@ class SliderPreferencesTableViewController: UITableViewController {
         case ConsentLevels.off.rawValue:
             consentManager.setUserConsentStatus(TEALConsentStatus.NotConsented)
         case ConsentLevels.performance.rawValue:
-            consentManager.setUserConsentStatus(TEALConsentStatus.Consented)
+            let categories = consentGroups[ConsentLevels.performance.rawValue].categories
+            consentManager.setUserConsentStatus(TEALConsentStatus.Consented, withUserConsentCategories: categories)
         case ConsentLevels.marketing.rawValue:
-            consentManager.setUserConsentStatus(TEALConsentStatus.Consented)
+            let categories = consentGroups[ConsentLevels.marketing.rawValue].categories
+            consentManager.setUserConsentStatus(TEALConsentStatus.Consented, withUserConsentCategories: categories)
         case ConsentLevels.personalizedAdvertising.rawValue:
-            consentManager.setUserConsentStatus(TEALConsentStatus.Consented)
+            let categories = consentGroups[ConsentLevels.personalizedAdvertising.rawValue].categories
+            consentManager.setUserConsentStatus(TEALConsentStatus.Consented, withUserConsentCategories: categories)
         default:
             consentManager.setUserConsentStatus(TEALConsentStatus.Unknown)
         }
-        consentManager.setUserConsentCategories(consentGroups[consentIndex].categories)
+
         updateConsentStatusLabel()
         updateConsentLevelLabel()
         updateConsentedCategoriesLabel(index: consentIndex)
