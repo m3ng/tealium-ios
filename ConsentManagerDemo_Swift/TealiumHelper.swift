@@ -22,7 +22,7 @@ class TealiumHelper: NSObject {
 
         // optionally set consent manager properties on initialization of Tealium instance
 //        configuration.userConsentCategories = ["analytics", "big_data"]
-        
+//        configuration.userConsentStatus = .NotConsented
         self.tealium = Tealium.newInstance(forKey: "1", configuration: configuration)
         self.tealium.setConsentManagerDelegate(self)
         self.tealium.consentManager.setConsentLoggingEnabled(false)

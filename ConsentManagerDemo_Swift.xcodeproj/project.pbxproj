@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BE6C64491467E3A49B8FC75 /* Pods_ConsentManagerDemo_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF7AE20CF33474ECAB76D4D /* Pods_ConsentManagerDemo_Swift.framework */; };
 		4B0357B420BDF6AD0064A6EE /* SliderPreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0357B320BDF6AD0064A6EE /* SliderPreferencesTableViewController.swift */; };
 		4B0357B620D01B170064A6EE /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0357B520D01B170064A6EE /* SwitchTableViewCell.swift */; };
 		4B0357B820D030160064A6EE /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0357B720D030160064A6EE /* TitleTableViewCell.swift */; };
@@ -20,8 +21,6 @@
 		4B2A118E20B87E2100BCE2C6 /* TealiumHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A118D20B87E2100BCE2C6 /* TealiumHelper.swift */; };
 		4B2A119020B8C8E800BCE2C6 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A118F20B8C8E800BCE2C6 /* HomeTableViewController.swift */; };
 		4B2A119220B8D23F00BCE2C6 /* SimplePreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A119120B8D23F00BCE2C6 /* SimplePreferencesTableViewController.swift */; };
-		4B858EC320FD3007002D5D20 /* TealiumIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B858EC220FD3007002D5D20 /* TealiumIOS.framework */; };
-		4B858EC420FD3007002D5D20 /* TealiumIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B858EC220FD3007002D5D20 /* TealiumIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,7 +30,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4B858EC420FD3007002D5D20 /* TealiumIOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,24 +37,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B8484CFEE69706F295A587E /* Pods-ConsentManagerDemo_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsentManagerDemo_Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConsentManagerDemo_Swift/Pods-ConsentManagerDemo_Swift.release.xcconfig"; sourceTree = "<group>"; };
 		4B0357B320BDF6AD0064A6EE /* SliderPreferencesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPreferencesTableViewController.swift; sourceTree = "<group>"; };
 		4B0357B520D01B170064A6EE /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		4B0357B720D030160064A6EE /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		4B0357C020D18C760064A6EE /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		4B0357C320D18CFA0064A6EE /* ConsentGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentGroup.swift; sourceTree = "<group>"; };
-		4B2A116A20B8625000BCE2C6 /* ConsentManagerDemo_ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConsentManagerDemo_ObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B2A116A20B8625000BCE2C6 /* ConsentManagerDemo_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConsentManagerDemo_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2A116D20B8625000BCE2C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B2A117220B8625000BCE2C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B2A117420B8625200BCE2C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B2A117720B8625200BCE2C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B2A117920B8625200BCE2C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B2A118120B8637C00BCE2C6 /* PreferencesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesListViewController.swift; sourceTree = "<group>"; };
-		4B2A118920B87B9000BCE2C6 /* ConsentManagerDemo_ObjC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ConsentManagerDemo_ObjC-Bridging-Header.h"; sourceTree = "<group>"; };
+		4B2A118920B87B9000BCE2C6 /* ConsentManagerDemo_Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ConsentManagerDemo_Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		4B2A118D20B87E2100BCE2C6 /* TealiumHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TealiumHelper.swift; sourceTree = "<group>"; };
 		4B2A118F20B8C8E800BCE2C6 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		4B2A119120B8D23F00BCE2C6 /* SimplePreferencesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePreferencesTableViewController.swift; sourceTree = "<group>"; };
-		4B858EC220FD3007002D5D20 /* TealiumIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TealiumIOS.framework; sourceTree = "<group>"; };
 		4BAE554E20EA9FC7007551B9 /* TealiumIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TealiumIOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/FrameworkBuilder-dmbnvbrnwapxjacsxxaxikshtzto/Build/Products/Release-iphonesimulator/TealiumIOS.framework"; sourceTree = "<group>"; };
+		4CF7AE20CF33474ECAB76D4D /* Pods_ConsentManagerDemo_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConsentManagerDemo_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DDD6D47E4A9FFFE7CFABADD /* Pods-ConsentManagerDemo_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsentManagerDemo_Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConsentManagerDemo_Swift/Pods-ConsentManagerDemo_Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B858EC320FD3007002D5D20 /* TealiumIOS.framework in Frameworks */,
+				0BE6C64491467E3A49B8FC75 /* Pods_ConsentManagerDemo_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,22 +83,22 @@
 		4B2A116120B8625000BCE2C6 = {
 			isa = PBXGroup;
 			children = (
-				4B858EC220FD3007002D5D20 /* TealiumIOS.framework */,
-				4B2A116C20B8625000BCE2C6 /* ConsentManagerDemo_ObjC */,
+				4B2A116C20B8625000BCE2C6 /* ConsentManagerDemo_Swift */,
 				4B2A116B20B8625000BCE2C6 /* Products */,
 				4BAE554D20EA9FC7007551B9 /* Frameworks */,
+				7156C30B73DA51CB5E06DB4F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		4B2A116B20B8625000BCE2C6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4B2A116A20B8625000BCE2C6 /* ConsentManagerDemo_ObjC.app */,
+				4B2A116A20B8625000BCE2C6 /* ConsentManagerDemo_Swift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4B2A116C20B8625000BCE2C6 /* ConsentManagerDemo_ObjC */ = {
+		4B2A116C20B8625000BCE2C6 /* ConsentManagerDemo_Swift */ = {
 			isa = PBXGroup;
 			children = (
 				4B0357C220D18CEA0064A6EE /* Models */,
@@ -114,38 +114,50 @@
 				4B2A117420B8625200BCE2C6 /* Assets.xcassets */,
 				4B2A117620B8625200BCE2C6 /* LaunchScreen.storyboard */,
 				4B2A117920B8625200BCE2C6 /* Info.plist */,
-				4B2A118920B87B9000BCE2C6 /* ConsentManagerDemo_ObjC-Bridging-Header.h */,
+				4B2A118920B87B9000BCE2C6 /* ConsentManagerDemo_Swift-Bridging-Header.h */,
 			);
-			path = ConsentManagerDemo_ObjC;
+			path = ConsentManagerDemo_Swift;
 			sourceTree = "<group>";
 		};
 		4BAE554D20EA9FC7007551B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				4BAE554E20EA9FC7007551B9 /* TealiumIOS.framework */,
+				4CF7AE20CF33474ECAB76D4D /* Pods_ConsentManagerDemo_Swift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7156C30B73DA51CB5E06DB4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DDD6D47E4A9FFFE7CFABADD /* Pods-ConsentManagerDemo_Swift.debug.xcconfig */,
+				1B8484CFEE69706F295A587E /* Pods-ConsentManagerDemo_Swift.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4B2A116920B8625000BCE2C6 /* ConsentManagerDemo_ObjC */ = {
+		4B2A116920B8625000BCE2C6 /* ConsentManagerDemo_Swift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B2A117C20B8625200BCE2C6 /* Build configuration list for PBXNativeTarget "ConsentManagerDemo_ObjC" */;
+			buildConfigurationList = 4B2A117C20B8625200BCE2C6 /* Build configuration list for PBXNativeTarget "ConsentManagerDemo_Swift" */;
 			buildPhases = (
+				A5D20D7716DEFCCF712F112F /* [CP] Check Pods Manifest.lock */,
 				4B2A116620B8625000BCE2C6 /* Sources */,
 				4B2A116720B8625000BCE2C6 /* Frameworks */,
 				4B2A116820B8625000BCE2C6 /* Resources */,
 				4BAE64E720EEB0EF005B80E9 /* Embed Frameworks */,
+				F6A10B94F9DC9D67D2E00145 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ConsentManagerDemo_ObjC;
+			name = ConsentManagerDemo_Swift;
 			productName = ConsentManagerDemo_ObjC;
-			productReference = 4B2A116A20B8625000BCE2C6 /* ConsentManagerDemo_ObjC.app */;
+			productReference = 4B2A116A20B8625000BCE2C6 /* ConsentManagerDemo_Swift.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -163,7 +175,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4B2A116520B8625000BCE2C6 /* Build configuration list for PBXProject "ConsentManagerDemo_ObjC" */;
+			buildConfigurationList = 4B2A116520B8625000BCE2C6 /* Build configuration list for PBXProject "ConsentManagerDemo_Swift" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -176,7 +188,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4B2A116920B8625000BCE2C6 /* ConsentManagerDemo_ObjC */,
+				4B2A116920B8625000BCE2C6 /* ConsentManagerDemo_Swift */,
 			);
 		};
 /* End PBXProject section */
@@ -193,6 +205,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A5D20D7716DEFCCF712F112F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ConsentManagerDemo_Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6A10B94F9DC9D67D2E00145 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ConsentManagerDemo_Swift/Pods-ConsentManagerDemo_Swift-frameworks.sh",
+				"${PODS_ROOT}/TealiumIOS/TealiumIOS.framework",
+				"${PODS_ROOT}/TealiumIOS/TealiumIOS.framework.dSYM",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TealiumIOS.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/TealiumIOS.framework.dSYM",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConsentManagerDemo_Swift/Pods-ConsentManagerDemo_Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4B2A116620B8625000BCE2C6 /* Sources */ = {
@@ -350,6 +403,7 @@
 		};
 		4B2A117D20B8625200BCE2C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DDD6D47E4A9FFFE7CFABADD /* Pods-ConsentManagerDemo_Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -358,13 +412,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = ConsentManagerDemo_ObjC/Info.plist;
+				INFOPLIST_FILE = ConsentManagerDemo_Swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tealium.ConsentManagerDemo-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tealium.ConsentManagerDemo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -374,6 +428,7 @@
 		};
 		4B2A117E20B8625200BCE2C6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B8484CFEE69706F295A587E /* Pods-ConsentManagerDemo_Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -382,13 +437,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = ConsentManagerDemo_ObjC/Info.plist;
+				INFOPLIST_FILE = ConsentManagerDemo_Swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tealium.ConsentManagerDemo-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tealium.ConsentManagerDemo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/$(PROJECT_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -399,7 +454,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B2A116520B8625000BCE2C6 /* Build configuration list for PBXProject "ConsentManagerDemo_ObjC" */ = {
+		4B2A116520B8625000BCE2C6 /* Build configuration list for PBXProject "ConsentManagerDemo_Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B2A117A20B8625200BCE2C6 /* Debug */,
@@ -408,7 +463,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B2A117C20B8625200BCE2C6 /* Build configuration list for PBXNativeTarget "ConsentManagerDemo_ObjC" */ = {
+		4B2A117C20B8625200BCE2C6 /* Build configuration list for PBXNativeTarget "ConsentManagerDemo_Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4B2A117D20B8625200BCE2C6 /* Debug */,
